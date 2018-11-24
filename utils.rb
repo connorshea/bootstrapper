@@ -6,3 +6,8 @@ def gem_install_or_update(gem)
     system("gem install #{gem}")
   end
 end
+
+# Use Homebrew to install a package.
+def brew_install(package)
+  system("brew install #{package}")
+end

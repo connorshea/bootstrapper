@@ -9,13 +9,14 @@ bootstrapper:
     mysql: true
     git: true
     rbenv: true
-    rvm: false
     vim: true
   # Homebrew packages that should be installed, this is for installing things
   # the script doesn't already support.
   # Leave this empty if you don't want to install any of it.
   brew_install:
     - 'cowsay'
+    - 'tree'
   # Arbitrary commands to run after setting up the script. Be careful with this!
   after_script:
     - 'cowsay test'
+    - 'tree .'
