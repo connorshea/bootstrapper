@@ -1,6 +1,8 @@
 bootstrapper:
   # Configure what the script should set up for you.
+  # Most of these are just installed from Homebrew.
   config:
+    # homebrew can't actually be set to false or everything else will break, sorry!
     homebrew: true
     ruby: true
     postgres: true
@@ -8,9 +10,12 @@ bootstrapper:
     git: true
     rbenv: true
     rvm: false
+    vim: true
   # Homebrew packages that should be installed, this is for installing things
   # the script doesn't already support.
+  # Leave this empty if you don't want to install any of it.
   brew_install:
     - 'cowsay'
+  # Arbitrary commands to run after setting up the script. Be careful with this!
   after_script:
     - 'cowsay test'

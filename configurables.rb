@@ -1,11 +1,30 @@
+require 'net/http'
+require 'uri'
+require_relative 'utils'
+
 # Install Homebrew
 def homebrew
-  puts "Installation of Homebrew is not built yet."
+  # Check to make sure Homebrew isn't installed already.
+  if !system("command -v brew >/dev/null")
+    puts "Installing Homebrew..."
+    
+    homebrew_uri = URI.parse("https://raw.githubusercontent.com/Homebrew/install/master/install")
+    response = Net::HTTP.get_response(homebrew_uri)
+    
+    puts response.code
+    puts response.body
+  else
+    puts "Homebrew is already installed."
+  end
 end
 
 # Install Ruby including Bundler and RubyGems
 def ruby
-  puts "Installation of Ruby is not built yet."
+  puts "Updating RubyGems to latest..."
+  system("gem update --system")
+
+  puts "Installing Bundler..."
+  gem_install_or_update("bundler")
 end
 
 # Install Postgres
