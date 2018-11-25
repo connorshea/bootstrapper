@@ -4,12 +4,6 @@ require_relative 'utils'
 
 BOOTSTRAPPER_YML = YAML.load_file('bootstrapper.yml')
 
-puts BOOTSTRAPPER_YML.inspect
-
-config = BOOTSTRAPPER_YML["bootstrapper"]["config"]
-
-puts config
-
 HOMEBREW_PREFIX = '/usr/local'
 
 if Dir.exist?(HOMEBREW_PREFIX)
@@ -21,6 +15,8 @@ else
   system("sudo chflags norestricted '#{HOMEBREW_PREFIX}'")
   system("sudo chown -R '#{ENV['LOGNAME']}:admin' '#{HOMEBREW_PREFIX}'")
 end
+
+config = BOOTSTRAPPER_YML["bootstrapper"]["config"]
 
 if config["homebrew"]
   install_homebrew()
