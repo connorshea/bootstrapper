@@ -53,8 +53,24 @@ if config["vim"]
   install_vim()
 end
 
-homebrew_packages = BOOTSTRAPPER_YML["bootstrapper"]["brew_install"]
+puts
+puts "Installing extra Homebrew packages..."
 
+# Install any extra Homebrew packages the user requests
+homebrew_packages = BOOTSTRAPPER_YML["bootstrapper"]["brew_install"]
 homebrew_packages.each do |package|
   brew_install(package)
 end
+
+puts
+puts "Running specified after_script commands..."
+
+# Run the scripts the user specifies.
+after_script = BOOTSTRAPPER_YML["bootstrapper"]["after_script"]
+after_script.each do |command|
+  puts
+  puts "Running command: \"#{command}\""
+  system(command)
+end
+
+

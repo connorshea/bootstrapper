@@ -30,7 +30,8 @@ end
 
 # Install MySQL
 def install_mysql
-  puts "Installation of MySQL is not built yet."
+  puts "Installing MySQL..."
+  brew_install("mysql")
 end
 
 # Install git
@@ -51,7 +52,9 @@ end
 
 # Install rbenv
 def install_rbenv
-  puts "Installation of rbenv is not built yet."
+  puts "Installing rbenv..."
+  brew_install("rbenv")
+  system("rbenv init")
 end
 
 # Install vim
