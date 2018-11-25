@@ -1,5 +1,7 @@
 # Bootstrapper
 
+**DISCLAIMER**: I wouldn't recommend using this unless you're willing to reset the Mac if something goes wrong. It's been tested, but not extensively or on actual new hardware. Mojave is the only version I've tested it on, past/future versions may work but there are no guarantees.
+
 The goal of this Ruby script is to take a simple YAML configuration file and set up all the utilities one may need.
 
 The idea comes from thoughtbot's [laptop](https://github.com/thoughtbot/laptop) script, which I wanted to make more configurable.
