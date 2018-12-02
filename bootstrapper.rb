@@ -1,6 +1,6 @@
 require 'yaml'
-require_relative 'configurables'
-require_relative 'utils'
+require_relative 'src/configurables'
+require_relative 'src/utils'
 
 BOOTSTRAPPER_YML = YAML.load_file('bootstrapper.yml')
 

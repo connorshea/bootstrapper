@@ -1,8 +1,8 @@
+# This is my (Connor Shea) bootstrapper YAML config.
 bootstrapper:
   # Configure what the script should set up for you.
   # Most of these are just installed from Homebrew.
   config:
-    # homebrew can't actually be set to false or everything else will break, sorry!
     homebrew: true
     ruby: true
     postgres: true
@@ -14,7 +14,8 @@ bootstrapper:
   # the script doesn't already support.
   # Leave this empty if you don't want to install any of it.
   brew_install:
+    - 'cowsay'
     - 'tree'
   # Arbitrary commands to run after setting up the script. Be careful with this!
   after_script:
-    - 'tree .'
+    - 'rbenv install 2.5.3'
