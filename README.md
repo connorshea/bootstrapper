@@ -11,10 +11,11 @@ The idea comes from thoughtbot's [laptop](https://github.com/thoughtbot/laptop) 
 1. Open the Terminal.
 2. Try to run `git help`, if the Xcode Command Line Tools aren't installed the command will fail and give you a dialog which will allow you to easily install the command line tools. Otherwise it'll just show some help info.
 3. Move to a directory you'd like to clone this git repository into.
-4. `git clone https://github.com/connorshea/bootstrapper.git`: Clone this repository with git
-5. `cd bootstrapper`: Move to the bootstrapper directory you just created
+4. `git clone https://github.com/connorshea/bootstrapper.git`: Clone this repository with git.
+5. `cd bootstrapper`: Move to the bootstrapper directory you just created.
 6. Configure your `bootstrapper.yml` file (more info in the `bootstrapper.yml` section below.)
-7. `ruby bootstrapper.rb`: You may need to run the script as sudo for it to work.
+7. `ruby bootstrapper.rb`: You _should not_ run this script as sudo. It has certain commands that must be run with sudo, and will therefore request your password, but the script itself shouldn't require sudo.
+   - **TIP**: You should pipe the script's output into `tee`, like so: `ruby bootstrapper.rb | tee output.txt`, this will make the script output both to the Terminal and to a separate file called `output.txt`. This allows the user to refer back to the outputs of the installation script later, as needed (e.g. certain brew formula may need special handling to work properly for certain use cases, and print instructions to stdout when they're installed).
 
 The script will have a few inputs for you to respond to, such as your git username and email.
 
