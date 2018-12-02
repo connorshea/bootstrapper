@@ -7,8 +7,8 @@ bootstrapper:
     ruby: true
     postgres: true
     mysql: true
-    git: false
-    rbenv: false
+    git: true
+    rbenv: true
     vim: true
   # Homebrew packages that should be installed, this is for installing things
   # the script doesn't already support.
