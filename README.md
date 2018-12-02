@@ -1,6 +1,6 @@
 # Bootstrapper
 
-**DISCLAIMER**: I wouldn't recommend using this unless you're willing to reset the Mac if something goes wrong. It's been tested, but not extensively or on actual new hardware. Mojave is the only version I've tested it on, past/future versions may work but there are no guarantees.
+**NOTE**: This script been tested (without problems on a new 2018 MacBook Pro running Mojave), but not extensively. Mojave is the only version I've tested it on, past/future versions may work but there are no guarantees.
 
 The goal of this Ruby script is to take a simple YAML configuration file and set up all the utilities one may need.
 
@@ -8,11 +8,13 @@ The idea comes from thoughtbot's [laptop](https://github.com/thoughtbot/laptop) 
 
 ## Usage
 
-1. Open the Terminal
-2. `git clone https://github.com/connorshea/bootstrapper.git`: Clone this repository with git
-3. `cd bootstrapper`: Move to the bootstrapper directory you just created
-4. Configure your `bootstrapper.yml` file (more info in the `bootstrapper.yml` section below.)
-5. `ruby bootstrapper.rb`: You may need to run the script as sudo for it to work.
+1. Open the Terminal.
+2. Try to run `git help`, if the Xcode Command Line Tools aren't installed the command will fail and give you a dialog which will allow you to easily install the command line tools. Otherwise it'll just show some help info.
+3. Move to a directory you'd like to clone this git repository into.
+4. `git clone https://github.com/connorshea/bootstrapper.git`: Clone this repository with git
+5. `cd bootstrapper`: Move to the bootstrapper directory you just created
+6. Configure your `bootstrapper.yml` file (more info in the `bootstrapper.yml` section below.)
+7. `ruby bootstrapper.rb`: You may need to run the script as sudo for it to work.
 
 The script will have a few inputs for you to respond to, such as your git username and email.
 
@@ -72,3 +74,5 @@ bootstrapper:
   # Leave this empty if you don't want to run any extra commands.
   after_script:
 ```
+
+See [examples/](examples/) for more example YAML files.
