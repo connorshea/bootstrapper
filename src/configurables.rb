@@ -13,15 +13,6 @@ def install_homebrew
   end
 end
 
-# Install Ruby including Bundler and RubyGems
-def install_ruby
-  puts "Updating RubyGems to latest..."
-  system("gem update --system")
-
-  puts "Installing Bundler..."
-  gem_install_or_update("bundler")
-end
-
 # Install Postgres
 def install_postgres
   puts "Installing postgres..."

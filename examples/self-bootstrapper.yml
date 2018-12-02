@@ -4,7 +4,6 @@ bootstrapper:
   # Most of these are just installed from Homebrew.
   config:
     homebrew: true
-    ruby: true
     postgres: true
     mysql: true
     git: true

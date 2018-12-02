@@ -17,7 +17,7 @@ urls.each do |url|
   open_url(url)
 end
 
-# Set up relevant directories for Homebrew installation.
+# Set up relevant directories for Homebrew installation, if needed.
 HOMEBREW_PREFIX = '/usr/local'
 if Dir.exist?(HOMEBREW_PREFIX)
   unless File.readable?(HOMEBREW_PREFIX)
@@ -31,10 +31,6 @@ end
 
 if config["homebrew"]
   install_homebrew()
-end
-
-if config["ruby"]
-  install_ruby()
 end
 
 if config["postgres"]

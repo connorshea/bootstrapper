@@ -66,7 +66,6 @@ bootstrapper:
   config:
     # homebrew can't actually be set to false or everything else will break, sorry!
     homebrew: true
-    ruby: true
     postgres: true
     mysql: false
     git: false
