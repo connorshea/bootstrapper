@@ -39,6 +39,12 @@ bootstrapper:
     git: true
     rbenv: true
     vim: true
+  # Open these URLs before doing anything else.
+  # This is so you can install applications like a text editor, browser, etc.
+  # while you wait for brew to install everything.
+  open_urls:
+    # VS Code
+    - 'https://code.visualstudio.com'
   # Homebrew packages that should be installed, this is for installing things
   # the script doesn't already support.
   # Leave this empty if you don't want to install any of it.
@@ -66,6 +72,10 @@ bootstrapper:
     git: false
     rbenv: false
     vim: false
+  # Open these URLs before doing anything else.
+  # This is so you can install applications like a text editor, browser, etc.
+  # while you wait for brew to install everything.
+  open_urls:
   # Homebrew packages that should be installed, this is for installing things
   # the script doesn't already support.
   # Leave this empty if you don't want to install any of it.

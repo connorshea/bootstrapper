@@ -3,9 +3,22 @@ require_relative 'src/configurables'
 require_relative 'src/utils'
 
 BOOTSTRAPPER_YML = YAML.load_file('bootstrapper.yml')
+config = BOOTSTRAPPER_YML["bootstrapper"]["config"]
 
+# Quit early if Homebrew config is set to false.
+unless config["homebrew"]
+  puts "You must install Homebrew for this script to work."
+  exit()
+end
+
+# Open requested URLs in the browser.
+urls = BOOTSTRAPPER_YML["bootstrapper"]["open_urls"]
+urls.each do |url|
+  open_url(url)
+end
+
+# Set up relevant directories for Homebrew installation.
 HOMEBREW_PREFIX = '/usr/local'
-
 if Dir.exist?(HOMEBREW_PREFIX)
   unless File.readable?(HOMEBREW_PREFIX)
     system("sudo chown -R '#{ENV['LOGNAME']}:admin' /usr/local")
@@ -16,13 +29,8 @@ else
   system("sudo chown -R '#{ENV['LOGNAME']}:admin' '#{HOMEBREW_PREFIX}'")
 end
 
-config = BOOTSTRAPPER_YML["bootstrapper"]["config"]
-
 if config["homebrew"]
   install_homebrew()
-else
-  puts "You must install Homebrew for this script to work."
-  exit()
 end
 
 if config["ruby"]
